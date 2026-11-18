@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jawa Pride Pekanbaru (JPP) — Seduluran Selawase</title>
+<style>
+  :root {
+    --maroon: #7A0000;
+    --maroon-dark: #4F0000;
+    --gold: #C9A227;
+    --gold-light: #F7EFD2;
+    --bg: #F6F5F2;
+    --text: #1E1E1E;
+    --muted: #5A5A5A;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* NAVBAR */
+  header.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--maroon-dark);
+    color: var(--white);
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--white);
+  }
+  .brand-text strong {
+    display: block;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+  }
+  .brand-text span {
+    font-size: 11px;
+    color: #E0E0E0;
+    letter-spacing: 1.5px;
+  }
+  nav.nav-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  nav.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background 0.2s, color 0.2s;
+  }
+  nav.nav-links a:hover {
+    background: rgba(255,255,255,0.12);
+    color: var(--gold);
+  }
+
+  /* HERO SECTION */
+  .hero {
+    background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 55px 20px 65px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .hero-logo {
+    width: 145px;
+    height: 145px;
+    margin: 0 auto 18px;
+    background: var(--white);
+    border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    border: 3px solid var(--gold);
+  }
+  .hero h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: var(--gold);
+  }
+  .hero .tagline {
+    font-size: 17px;
+    font-style: italic;
+    margin: 0 0 10px;
+    color: #FFFDF7;
+  }
+  .hero .sub {
+    max-width: 680px;
+    margin: 0 auto 24px;
+    font-size: 14.5px;
+    color: #EAEAEA;
+  }
+  .hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: #111;
+    padding: 11px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-gold:hover { background: #DFB73B; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid var(--gold);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+  .btn-wa {
+    background: #1E8E3E;
+    color: #FFFFFF;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    transition: background 0.2s;
+  }
+  .btn-wa:hover { background: #167330; }
+
+  /* CONTAINER & SECTIONS */
+  .container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .section-header h2 {
+    margin: 0;
+    font-size: 26px;
+    color: var(--maroon);
+  }
+  .section-header p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 14.5px;
+  }
+  .divider {
+    width: 65px;
+    height: 3.5px;
+    background: var(--gold);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  /* INFO CARDS */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--maroon);
+  }
+  .card h3 {
+    margin-top: 0;
+    color: var(--maroon);
+    font-size: 18px;
+  }
+  .card ul {
+    padding-left: 18px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .card li { margin-bottom: 6px; }
+
+  /* HIGHLIGHT STATS */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 30px 0 10px;
+  }
+  .stat-item {
+    background: var(--gold-light);
+    border: 1px solid #E5D399;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-item strong {
+    display: block;
+    font-size: 18px;
+    color: var(--maroon-dark);
+  }
+  .stat-item span {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* PENGURUS INTI CARDS */
+  .pengurus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+  }
+  .pengurus-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    border-bottom: 4px solid var(--gold);
+  }
+  .pengurus-role {
+    display: inline-block;
+    background: var(--maroon);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .pengurus-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text);
+  }
+
+  /* TABS AD / ART */
+  .tab-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 10px 20px;
+    border: 1.5px solid var(--maroon);
+    background: var(--white);
+    color: var(--maroon);
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--maroon);
+    color: var(--white);
+  }
+
+  /* DOKUMEN RESMI AD/ART */
+  .paper-doc {
+    background: var(--white);
+    padding: 45px 50px;
+    border-radius: 8px;
+    border: 1px solid #DCDCDC;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    font-family: 'Times New Roman', Times, serif;
+    color: #111;
+  }
+  .kop-surat {
+    text-align: center;
+    border-bottom: 3px double #111;
+    padding-bottom: 14px;
+    margin-bottom: 10px;
+  }
+  .kop-surat h2 {
+    margin: 6px 0 2px;
+    font-size: 24px;
+    color: #8B0000;
+    letter-spacing: 1px;
+  }
+  .kop-surat h4 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+  .kop-surat p {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+  }
+  .doc-motto {
+    text-align: center;
+    font-style: italic;
+    font-size: 13px;
+    margin: 10px 0 20px;
+  }
+  .doc-title {
+    text-align: center;
+    font-size: 19px;
+    margin: 24px 0 2px;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  .doc-subtitle {
+    text-align: center;
+    font-size: 13.5px;
+    font-weight: bold;
+    margin: 0 0 18px;
+  }
+  .mukadimah-box {
+    background: #FAFAFA;
+    border: 1px solid #DDD;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+  }
+  .bab-title {
+    background: #F4F0EA;
+    border-left: 4px solid #8B0000;
+    padding: 6px 12px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 20px 0 8px;
+    text-transform: uppercase;
+  }
+  .pasal-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 12px 0 4px;
+    color: #222;
+  }
+  .paper-doc p, .paper-doc li {
+    font-size: 14px;
+    line-height: 1.65;
+    text-align: justify;
+  }
+  .paper-doc ol, .paper-doc ul {
+    padding-left: 22px;
+    margin-top: 4px;
+  }
+  .paper-doc li { margin-bottom: 4px; }
+  .pengesahan-box {
+    border: 1px solid #111;
+    background: #FFFDF5;
+    padding: 12px 16px;
+    margin: 20px 0;
+    font-size: 13.5px;
+  }
+  .ttd-grid {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 28px;
+    gap: 20px;
+  }
+  .ttd-col { flex: 1; font-size: 14px; }
+  .ttd-space { height: 70px; }
+
+  /* FORM PENDAFTARAN */
+  .form-box {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    border-top: 4px solid var(--gold);
+  }
+  .form-group { margin-bottom: 15px; }
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--maroon);
+  }
+  .result-card {
+    display: none;
+    background: #F4F9F4;
+    border: 1.5px solid #66BB6A;
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .result-card h4 {
+    margin: 0 0 8px;
+    color: #1B5E20;
+    font-size: 15px;
+  }
+  .biodata-preview {
+    width: 100%;
+    height: 185px;
+    padding: 12px;
+    border: 1px solid #B7D7B9;
+    border-radius: 6px;
+    background: #FFFFFF;
+    font-family: inherit;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #111;
+    resize: vertical;
+  }
+  .copy-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .btn-copy {
+    background: var(--maroon);
+    color: var(--white);
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-copy:hover { background: var(--maroon-dark); }
+  .copy-status {
+    font-size: 13px;
+    color: #1B5E20;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1B1B1B;
+    color: #CCCCCC;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 13.5px;
+    border-top: 4px solid var(--gold);
+  }
+  footer strong { color: var(--gold); }
+
+  /* PRINT MODE */
+  @media print {
+    header.navbar, .hero, #tentang, #pengurus, #daftar, .tab-controls, .no-print, footer {
+      display: none !important;
+    }
+    body { background: white; padding: 0; }
+    .container { padding: 0; max-width: 100%; }
+    .paper-doc {
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+    .doc-section { display: block !important; }
+    .page-break { page-break-before: always; }
+  }
+
+  @media (max-width: 600px) {
+    .paper-doc { padding: 24px 18px; }
+    .hero h1 { font-size: 25px; }
+    .ttd-grid { flex-direction: column; gap: 25px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#beranda" class="brand">
+        <svg viewBox="0 0 240 240" width="42" height="42" xmlns="http://www.w3.org/2000/svg" style="background:#fff; border-radius:50%; padding:2px;">
+          <circle cx="120" cy="120" r="112" fill="#fff" stroke="#111" stroke-width="6"/>
+          <circle cx="120" cy="120" r="76" fill="#fff" stroke="#111" stroke-width="4"/>
+          <path d="M 120,30 C 142,65 162,96 167,128 C 169,145 160,158 148,165 L 172,177 L 154,187 L 86,187 L 68,177 L 92,165 C 80,158 71,145 73,128 C 78,96 98,65 120,30 Z" fill="#111"/>
+          <circle cx="120" cy="147" r="28" fill="#111" stroke="#fff" stroke-width="3"/>
+          <polygon points="118,125 118,149 101,149" fill="#fff"/>
+          <polygon points="122,127 137,149 122,149" fill="#fff"/>
+          <path d="M 96,152 L 144,152 L 136,161 L 104,161 Z" fill="#fff"/>
+        </svg>
+        <div class="brand-text">
+          <strong>JAWA PRIDE PEKANBARU</strong>
+          <span>SEDULURAN SELAWASE • RIAU</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Visi &amp; Misi</a>
+        <a href="#pengurus">Pengurus Inti</a>
+        <a href="#ad-art">AD / ART</a>
+        <a href="#daftar">Gabung Grup</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="beranda" class="hero">
+    <div class="hero-logo">
+      <svg viewBox="0 0 240 240" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="heroTopArc" d="M 30,120 A 90,90 0 1,1 210,120" />
+          <path id="heroBottomArc" d="M 26,125 A 94,94 0 0,0 214,125" />
+        </defs>
+        <circle cx="120" cy="120" r="114" fill="#ffffff" stroke="#111111" stroke-width="5"/>
+        <circle cx="120" cy="120" r="76" fill="#ffffff" stroke="#111111" stroke-width="3.5"/>
+        <text font-family="Arial, sans-serif" font-size="16.5" font-weight="bold" fill="#111111" letter-spacing="1.4">
+          <textPath href="#heroTopArc" startOffset="50%" text-anchor="middle">JAWA PRIDE PEKANBARU</textPath>
+        </text>
+        <text font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111" letter-spacing="1.4">
+          <textPath href="#heroBottomArc" startOffset="50%" text-anchor="middle">SEDULURAN SELAWASE</textPath>
+        </text>
+        <polygon points="22,111 25,118 32,118 26.5,122.5 28.5,129.5 22,125.5 15.5,129.5 17.5,122.5 12,118 19,118" fill="#111111"/>
+        <polygon points="218,111 221,118 228,118 222.5,122.5 224.5,129.5 218,125.5 211.5,129.5 213.5,122.5 208,118 215,118" fill="#111111"/>
+        <path d="M 120,30 C 142,65 162,96 167,128 C 169,145 160,158 148,165 L 172,177 L 154,187 L 86,187 L 68,177 L 92,165 C 80,158 71,145 73,128 C 78,96 98,65 120,30 Z" fill="#111111"/>
+        <path d="M 120,44 C 135,70 150,95 154,119 L 86,119 C 90,95 105,70 120,44 Z" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="5,2.5"/>
+        <line x1="120" y1="42" x2="120" y2="119" stroke="#ffffff" stroke-width="2.2"/>
+        <path d="M 102,78 Q 120,66 138,78 M 94,98 Q 120,84 146,98" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="120" cy="147" r="28" fill="#111111" stroke="#ffffff" stroke-width="2.5"/>
+        <polygon points="118,125 118,149 101,149" fill="#ffffff"/>
+        <polygon points="122,127 137,149 122,149" fill="#ffffff"/>
+        <path d="M 96,152 L 144,152 L 136,161 L 104,161 Z" fill="#ffffff"/>
+        <path d="M 99,165 Q 109.5,161.5 120,165 T 141,165" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+      </svg>
+    </div>
+    <h1>JAWA PRIDE PEKANBARU (JPP)</h1>
+    <p class="tagline">"Seduluran Selawase — Di Mana Bumi Dipijak, Di Situ Langit Dijunjung"</p>
+    <p class="sub">Wadah pemersatu, komunikasi, pelestarian seni budaya Jawa, serta pemberdayaan sosial ekonomi warga Jawa di Kota Pekanbaru dan sekitarnya, Provinsi Riau.</p>
+    <div class="hero-btns">
+      <a href="#ad-art" class="btn-gold">📜 Baca AD / ART Resmi</a>
+      <a href="#daftar" class="btn-outline">💬 Gabung Grup WhatsApp JPP</a>
+    </div>
+  </section>
+
+  <section id="tentang" class="container">
+    <div class="section-header">
+      <h2>Tiga Pilar Utama JPP</h2>
+      <p>Guyub Rukun, Tepo Seliro, Gotong Royong dalam Bingkai NKRI</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. Sosial &amp; Persaudaraan</h3>
+        <ul>
+          <li>Mempererat silaturahmi antar warga Jawa di Pekanbaru dan sekitarnya.</li>
+          <li>Menumbuhkan gotong royong, <i>tepo seliro</i>, dan kepedulian sosial (takziah, santunan musibah, bakti sosial).</li>
+          <li>Menjadi jembatan komunikasi positif dengan pemerintah daerah dan paguyuban lain.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>2. Seni &amp; Budaya Jawa</h3>
+        <ul>
+          <li><i>Nguri-uri</i> budaya Jawa: bahasa Jawa, gamelan, tari, karawitan, wayang, dan kuliner tradisional.</li>
+          <li>Menyelenggarakan pagelaran seni, pelatihan, dan peringatan hari besar tradisi Jawa.</li>
+          <li>Membina generasi muda Jawa di perantauan agar bangga dengan jati dirinya.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>3. Pemberdayaan &amp; Ekonomi</h3>
+        <ul>
+          <li>Wadah bertukar informasi usaha dan pengembangan UMKM anggota.</li>
+          <li>Berbagi informasi lowongan pekerjaan dan kemitraan usaha halal.</li>
+          <li>Membina anggota agar taat hukum, mandiri, dan bermanfaat bagi masyarakat.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <strong>3 Oktober 2026</strong>
+        <span>Tanggal Pendirian JPP</span>
+      </div>
+      <div class="stat-item">
+        <strong>2 Tahun Sekali</strong>
+        <span>Periode Jabatan &amp; MUBES</span>
+      </div>
+      <div class="stat-item">
+        <strong>Rp 10.000 / Bulan</strong>
+        <span>Iuran Wajib Anggota</span>
+      </div>
+      <div class="stat-item">
+        <strong>9 Bidang Strategis</strong>
+        <span>Struktur Kepengurusan</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengurus" class="container" style="padding-top: 10px;">
+    <div class="section-header">
+      <h2>Pimpinan &amp; Penasehat JPP</h2>
+      <p>Jajaran Pengurus Inti Komunitas Jawa Pride Pekanbaru</p>
+      <div class="divider"></div>
+    </div>
+    <div class="pengurus-grid">
+      <div class="pengurus-card">
+        <span class="pengurus-role">PENASEHAT</span>
+        <div class="pengurus-name">Winarto</div>
+      </div>
+      <div class="pengurus-card">
+        <span class="pengurus-role">KETUA UMUM</span>
+        <div class="pengurus-name">Jakaria Tri Utomo</div>
+      </div>
+      <div class="pengurus-card">
+        <span class="pengurus-role">SEKRETARIS</span>
+        <div class="pengurus-name">Ucik Okta</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ad-art" class="container">
+    <div class="section-header no-print">
+      <h2>Anggaran Dasar &amp; Anggaran Rumah Tangga</h2>
+      <p>Naskah Resmi Konstitusi Komunitas Jawa Pride Pekanbaru (JPP)</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="tab-controls no-print">
+      <button class="tab-btn active" onclick="filterDoc('all', this)">Tampilkan Semua (AD &amp; ART)</button>
+      <button class="tab-btn" onclick="filterDoc('ad', this)">Anggaran Dasar (AD)</button>
+      <button class="tab-btn" onclick="filterDoc('art', this)">Anggaran Rumah Tangga (ART)</button>
+      <button class="btn-gold" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+    </div>
+
+    <div class="paper-doc">
+      <div class="kop-surat">
+        <svg viewBox="0 0 240 240" width="95" height="95" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:0 auto;">
+          <defs>
+            <path id="docTopArc" d="M 30,120 A 90,90 0 1,1 210,120" />
+            <path id="docBottomArc" d="M 26,125 A 94,94 0 0,0 214,125" />
+          </defs>
+          <circle cx="120" cy="120" r="114" fill="#ffffff" stroke="#111111" stroke-width="5"/>
+          <circle cx="120" cy="120" r="76" fill="#ffffff" stroke="#111111" stroke-width="3.5"/>
+          <text font-family="Arial, sans-serif" font-size="16.5" font-weight="bold" fill="#111111" letter-spacing="1.4">
+            <textPath href="#docTopArc" startOffset="50%" text-anchor="middle">JAWA PRIDE PEKANBARU</textPath>
+          </text>
+          <text font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111111" letter-spacing="1.4">
+            <textPath href="#docBottomArc" startOffset="50%" text-anchor="middle">SEDULURAN SELAWASE</textPath>
+          </text>
+          <polygon points="22,111 25,118 32,118 26.5,122.5 28.5,129.5 22,125.5 15.5,129.5 17.5,122.5 12,118 19,118" fill="#111111"/>
+          <polygon points="218,111 221,118 228,118 222.5,122.5 224.5,129.5 218,125.5 211.5,129.5 213.5,122.5 208,118 215,118" fill="#111111"/>
+          <path d="M 120,30 C 142,65 162,96 167,128 C 169,145 160,158 148,165 L 172,177 L 154,187 L 86,187 L 68,177 L 92,165 C 80,158 71,145 73,128 C 78,96 98,65 120,30 Z" fill="#111111"/>
+          <path d="M 120,44 C 135,70 150,95 154,119 L 86,119 C 90,95 105,70 120,44 Z" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="5,2.5"/>
+          <line x1="120" y1="42" x2="120" y2="119" stroke="#ffffff" stroke-width="2.2"/>
+          <path d="M 102,78 Q 120,66 138,78 M 94,98 Q 120,84 146,98" fill="none" stroke="#ffffff" stroke-width="2"/>
+          <circle cx="120" cy="147" r="28" fill="#111111" stroke="#ffffff" stroke-width="2.5"/>
+          <polygon points="118,125 118,149 101,149" fill="#ffffff"/>
+          <polygon points="122,127 137,149 122,149" fill="#ffffff"/>
+          <path d="M 96,152 L 144,152 L 136,161 L 104,161 Z" fill="#ffffff"/>
+          <path d="M 99,165 Q 109.5,161.5 120,165 T 141,165" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+        </svg>
+        <h2>KOMUNITAS JAWA PRIDE PEKANBARU</h2>
+        <h4>JPP • PEKANBARU - RIAU</h4>
+        <p>Sekretariat : Kota Pekanbaru, Provinsi Riau | Email : jawapridepekanbaru@gmail.com</p>
+      </div>
+      <div class="doc-motto">"Seduluran Selawase — Di Mana Bumi Dipijak, Di Situ Langit Dijunjung"</div>
+
+      <div id="sec-ad" class="doc-section">
+        <div class="doc-title">ANGGARAN DASAR (AD)</div>
+        <div class="doc-subtitle">KOMUNITAS JAWA PRIDE PEKANBARU (JPP)</div>
+
+        <div class="mukadimah-box">
+          <div style="text-align:center; font-weight:bold; margin-bottom:6px;">MUKADIMAH</div>
+          <p style="margin:0;">Dengan menyebut nama Tuhan Yang Maha Esa, dalam rangka ikut membantu keberhasilan dan kesuksesan program pemerintah kota/daerah serta menjaga persatuan dan kesatuan bangsa dalam bingkai Negara Kesatuan Republik Indonesia (NKRI), maka dibentuklah wadah silaturahmi dan pelestarian budaya warga Jawa yang diberi nama <b>Komunitas Jawa Pride Pekanbaru (JPP)</b>.</p>
+        </div>
+
+        <div class="bab-title">BAB I — NAMA, WAKTU, KEDUDUKAN DAN SEMBOYAN</div>
+        <div class="pasal-title">Pasal 1 — Nama Organisasi</div>
+        <p>Organisasi/komunitas ini bernama <b>KOMUNITAS JAWA PRIDE PEKANBARU</b>, yang selanjutnya disingkat <b>JPP</b>.</p>
+
+        <div class="pasal-title">Pasal 2 — Waktu dan Kedudukan</div>
+        <ol>
+          <li>JPP didirikan di Kota Pekanbaru pada tanggal <b>3 Oktober 2026</b> untuk jangka waktu yang tidak ditentukan.</li>
+          <li>Sekretariat dan kedudukan JPP berada di Kota Pekanbaru, Provinsi Riau, Negara Kesatuan Republik Indonesia (NKRI).</li>
+        </ol>
+
+        <div class="pasal-title">Pasal 3 — Semboyan dan Spirit</div>
+        <p>Semboyan JPP adalah <b><i>"Seduluran Selawase — Di Mana Bumi Dipijak, Di Situ Langit Dijunjung"</i></b> dengan spirit <i>Guyub Rukun, Tepo Seliro, dan Gotong Royong</i>.</p>
+
+        <div class="bab-title">BAB II — AZAS, VISI, MISI DAN TUJUAN</div>
+        <div class="pasal-title">Pasal 4 — Azas</div>
+        <p>JPP berazaskan Pancasila, Undang-Undang Dasar 1945, peraturan perundang-undangan yang berlaku di NKRI, serta nilai-nilai luhur budaya Jawa.</p>
+
+        <div class="pasal-title">Pasal 5 — Visi</div>
+        <p>Menjadi wadah komunikasi antar warga Jawa Kota Pekanbaru dan sekitarnya di Provinsi Riau yang guyub rukun, <i>nguri-uri</i> budaya Jawa, serta bermanfaat bagi masyarakat.</p>
+
+        <div class="pasal-title">Pasal 6 — Misi</div>
+        <ol>
+          <li><b>Bidang Sosial dan Persaudaraan (Guyub Rukun):</b> Mempererat tali silaturahmi antar warga Jawa di Kota Pekanbaru dan sekitarnya, menumbuhkan semangat gotong royong dan <i>tepo seliro</i>, serta menjadi jembatan komunikasi warga dengan pemerintah daerah.</li>
+          <li><b>Bidang Seni dan Budaya (Nguri-uri Budaya Jawa):</b> Melestarikan dan mengembangkan seni serta budaya Jawa (bahasa Jawa, gamelan, tari, wayang, dan kuliner), menyelenggarakan kegiatan adat/pagelaran budaya, serta membina generasi muda Jawa agar mencintai jati dirinya.</li>
+          <li><b>Bidang Pemberdayaan dan Kemanfaatan:</b> Menjadikan JPP sebagai wadah pertukaran informasi usaha untuk meningkatkan kemandirian ekonomi anggota, melaksanakan bakti sosial kemanusiaan, dan membina warga agar taat hukum serta berkontribusi positif.</li>
+        </ol>
+
+        <div class="pasal-title">Pasal 7 — Tujuan Organisasi</div>
+        <ol>
+          <li><b>Tujuan Umum:</b> Mewujudkan kerukunan, kesejahteraan, dan pelestarian jati diri warga Jawa di Kota Pekanbaru dan sekitarnya di Provinsi Riau dalam bingkai NKRI.</li>
+          <li><b>Tujuan Khusus:</b>
+            <ul>
+              <li>Terciptanya <i>database</i> keanggotaan warga Jawa yang tergabung dalam JPP.</li>
+              <li>Terlaksananya pertemuan dan kegiatan rutin sebagai media silaturahmi.</li>
+              <li>Terbentuknya organisasi yang solid dengan kas sosial untuk membantu anggota yang tertimpa musibah.</li>
+              <li>Terlaksananya pagelaran dan pelatihan seni budaya Jawa.</li>
+              <li>Terlaksananya usaha ekonomi produktif untuk kemandirian anggota.</li>
+              <li>Terjalinnya kerja sama harmonis dengan paguyuban lain serta pemerintah daerah guna menjaga kerukunan antar suku.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="bab-title">BAB III — KEANGGOTAAN</div>
+        <div class="pasal-title">Pasal 8 — Syarat dan Kategori Anggota</div>
+        <ol>
+          <li>Keanggotaan JPP terbuka secara sukarela bagi warga Jawa, keturunan Jawa, maupun simpatisan yang bersedia menjaga budaya Jawa, berdomisili di Kota Pekanbaru dan sekitarnya, serta berusia minimal 17 tahun.</li>
+          <li><b>Anggota Tetap / Biasa:</b> Anggota yang tercatat dalam <i>database</i> resmi dan memiliki Kartu Tanda Anggota (KTA) JPP.</li>
+          <li><b>Simpatisan JPP:</b> Warga yang berpartisipasi dalam kegiatan atau grup komunikasi JPP namun belum terdaftar sebagai pemegang KTA.</li>
+          <li><b>Anggota Kehormatan / Dewan Sesepuh:</b> Tokoh masyarakat Jawa atau pihak yang berjasa dan dituakan dalam organisasi.</li>
+        </ol>
+
+        <div class="pasal-title">Pasal 9 — Hak dan Kewajiban Anggota</div>
+        <ol>
+          <li><b>Hak Anggota:</b> Menyampaikan pendapat secara santun, mengikuti seluruh kegiatan JPP, memperoleh santunan sosial sesuai ketentuan, serta hak memilih dan dipilih dalam kepengurusan (khusus anggota ber-KTA aktif).</li>
+          <li><b>Kewajiban Anggota:</b> Menaati AD/ART dan kode etik JPP, menjaga nama baik organisasi di masyarakat maupun media sosial, menjunjung tinggi solidaritas, serta membayar iuran bulanan secara rutin.</li>
+        </ol>
+
+        <div class="bab-title">BAB IV — STRUKTUR DAN PERANGKAT ORGANISASI</div>
+        <div class="pasal-title">Pasal 10 — Perangkat Organisasi</div>
+        <ol>
+          <li>Musyawarah Besar (MUBES) sebagai pemegang kekuasaan tertinggi organisasi.</li>
+          <li>Dewan Pembina / Penasehat / Sesepuh.</li>
+          <li>Pengurus Harian Pusat (Ketua Umum, Wakil Ketua, Sekretaris, Bendahara).</li>
+          <li>Bidang-Bidang Kepengurusan dan Koordinator Wilayah (Korwil) Kecamatan.</li>
+        </ol>
+
+        <div class="pasal-title">Pasal 11 — Bidang Kepengurusan</div>
+        <p>Pengurus Harian dibantu oleh 9 (sembilan) bidang strategis, yaitu: (1) Bidang Sosial Kemasyarakatan &amp; Persaudaraan, (2) Bidang Seni &amp; Budaya, (3) Bidang Peranan Wanita, (4) Bidang Organisasi &amp; Keanggotaan, (5) Bidang Advokasi &amp; Hukum, (6) Bidang Disiplin &amp; Etika, (7) Bidang Dana &amp; Usaha, (8) Bidang Pemberdayaan &amp; Kemanfaatan (UMKM), serta (9) Bidang Humas, Media &amp; Dokumentasi.</p>
+
+        <div class="bab-title">BAB V — MUSYAWARAH, RAPAT DAN KEUANGAN</div>
+        <div class="pasal-title">Pasal 12 — Forum Permusyawaratan</div>
+        <ol>
+          <li><b>Musyawarah Besar (MUBES):</b> Diselenggarakan <b>1 (satu) kali dalam 2 (dua) tahun</b> untuk memilih pengurus baru, mengevaluasi laporan pertanggungjawaban, dan menetapkan perubahan AD/ART.</li>
+          <li><b>Rapat Pengurus:</b> Diselenggarakan minimal 1 (satu) kali sebulan atau sewaktu-waktu sesuai kebutuhan.</li>
+          <li><b>Kopdar / Kumpul Rutin:</b> Diselenggarakan minimal 1 (satu) kali sebulan untuk mempererat silaturahmi anggota.</li>
+          <li>Segala keputusan diambil secara <b>musyawarah untuk mufakat</b>, dan apabila tidak tercapai dilakukan pemungutan suara (<i>voting</i>) terbanyak.</li>
+        </ol>
+
+        <div class="pasal-title">Pasal 13 — Keuangan Organisasi</div>
+        <p>Sumber dana JPP berasal dari: (1) Iuran wajib bulanan anggota, (2) Sumbangan sukarela yang tidak mengikat, serta (3) Usaha-usaha halal dan sah secara hukum seperti penjualan atribut resmi, bazar, dan kemitraan.</p>
+
+        <div class="bab-title">BAB VI — LAMBANG, PERUBAHAN DAN PEMBUBARAN</div>
+        <div class="pasal-title">Pasal 14 — Lambang Organisasi</div>
+        <p>Lambang resmi JPP berbentuk lingkaran ganda bertuliskan <i>JAWA PRIDE PEKANBARU</i> dan <i>SEDULURAN SELAWASE</i> dengan simbol Gunungan Wayang dan Perahu Layar di bagian tengah.</p>
+
+        <div class="pasal-title">Pasal 15 — Perubahan AD dan Pembubaran Organisasi</div>
+        <ol>
+          <li>Perubahan Anggaran Dasar hanya sah apabila diputuskan melalui Musyawarah Besar (MUBES).</li>
+          <li>Pembubaran JPP hanya dapat dilakukan melalui MUBES Luar Biasa yang dihadiri dan disetujui sekurang-kurangnya 2/3 dari total anggota ber-KTA aktif.</li>
+        </ol>
+      </div>
+
+      <div id="sec-art" class="doc-section page-break">
+        <div class="doc-title">ANGGARAN RUMAH TANGGA (ART)</div>
+        <div class="doc-subtitle">KOMUNITAS JAWA PRIDE PEKANBARU (JPP)</div>
+
+        <div class="bab-title">BAB I — TATA CARA KEANGGOTAAN</div>
+        <div class="pasal-title">Pasal 1 — Pendaftaran, KTA dan Berakhirnya Keanggotaan</div>
+        <ol>
+          <li>Calon anggota mengisi formulir pendaftaran melalui Bidang Organisasi atau Koordinator Wilayah (Korwil) setempat.</li>
+          <li>Setelah diverifikasi pengurus dan disahkan Ketua Umum, anggota dimasukkan ke dalam <i>database</i> resmi dan berhak memperoleh Kartu Tanda Anggota (KTA) JPP.</li>
+          <li>Keanggotaan berakhir apabila anggota mengundurkan diri secara tertulis, meninggal dunia, atau diberhentikan oleh pengurus karena melanggar AD/ART dan kode etik organisasi.</li>
+        </ol>
+
+        <div class="bab-title">BAB II — KEPENGURUSAN DAN URAIAN TUGAS</div>
+        <div class="pasal-title">Pasal 2 — Masa Jabatan Pengurus</div>
+        <p>Pengurus JPP dipilih melalui Musyawarah Besar (MUBES) untuk masa jabatan <b>2 (dua) tahun sekali</b>, dan dapat dipilih kembali pada periode berikutnya.</p>
+
+        <div class="pasal-title">Pasal 3 — Tugas Pokok Pengurus</div>
+        <ol>
+          <li><b>Dewan Pembina / Penasehat:</b> Memberikan arahan, nasihat, pertimbangan, dan pengayoman kepada pengurus maupun anggota.</li>
+          <li><b>Ketua Umum:</b> Memimpin jalannya organisasi, mengambil kebijakan strategis sesuai hasil musyawarah, serta mewakili JPP ke luar.</li>
+          <li><b>Wakil Ketua:</b> Membantu tugas Ketua Umum dan menggantikan peran Ketua Umum apabila berhalangan.</li>
+          <li><b>Sekretaris:</b> Mengelola administrasi kesekretariatan, surat-menyurat, <i>database</i> KTA anggota, dan notulensi rapat.</li>
+          <li><b>Bendahara:</b> Mengelola keuangan, pencatatan iuran anggota, kas sosial, serta menyusun laporan keuangan secara berkala.</li>
+          <li><b>Bidang Sosial Kemasyarakatan &amp; Persaudaraan:</b> Mengoordinasikan kegiatan takziah, jenguk anggota sakit, santunan musibah, dan bakti sosial.</li>
+          <li><b>Bidang Seni &amp; Budaya:</b> Menggerakkan pelatihan dan pagelaran seni budaya Jawa (gamelan, tari, karawitan, wayang, bahasa Jawa).</li>
+          <li><b>Bidang Peranan Wanita:</b> Memberdayakan anggota perempuan dalam kegiatan sosial, keterampilan, dan pendukung acara organisasi.</li>
+          <li><b>Bidang Organisasi &amp; Keanggotaan:</b> Menata struktur kepengurusan, Korwil, dan sistem pendataan KTA anggota.</li>
+          <li><b>Bidang Advokasi &amp; Hukum:</b> Memberikan pendampingan, edukasi hukum, dan perlindungan bagi anggota yang membutuhkan bantuan hukum.</li>
+          <li><b>Bidang Disiplin &amp; Etika:</b> Mengawasi kepatuhan anggota terhadap AD/ART dan tata tertib grup serta menindaklanjuti pelanggaran.</li>
+          <li><b>Bidang Dana &amp; Usaha:</b> Menggalang sumber pendanaan halal organisasi melalui atribut resmi, merchandise, dan kemitraan usaha.</li>
+          <li><b>Bidang Pemberdayaan &amp; Kemanfaatan:</b> Membina UMKM anggota, bursa informasi lowongan kerja, dan peningkatan ekonomi warga.</li>
+          <li><b>Bidang Humas, Media &amp; Dokumentasi:</b> Mengelola publikasi media sosial, dokumentasi kegiatan, serta hubungan eksternal dengan pemerintah dan paguyuban lain.</li>
+        </ol>
+
+        <div class="bab-title">BAB III — KEUANGAN DAN KEGIATAN RUTIN</div>
+        <div class="pasal-title">Pasal 4 — Iuran dan Transparansi Kas</div>
+        <ol>
+          <li>Besaran iuran wajib anggota ditetapkan sebesar <b>Rp 10.000 (sepuluh ribu rupiah) per bulan</b>, dan dapat ditinjau kembali melalui rapat pengurus atau MUBES.</li>
+          <li>Pencatatan kas sosial dipisahkan secara tertib dari dana operasional kegiatan organisasi.</li>
+          <li>Bendahara wajib melaporkan posisi keuangan secara transparan setiap bulan/triwulan kepada seluruh anggota melalui rapat maupun grup resmi.</li>
+        </ol>
+
+        <div class="pasal-title">Pasal 5 — Agenda Kegiatan Rutin</div>
+        <ol>
+          <li>Kopdar / Kumpul Rutin bulanan anggota.</li>
+          <li><i>Srawung</i> / Silaturahmi anjangsana antar anggota dan pengurus.</li>
+          <li>Peringatan Hari Besar &amp; Tradisi: Halal Bihalal / Syawalan, Hari Jadi (HUT) JPP, Bakti Sosial, serta Pengajian / Doa Bersama.</li>
+        </ol>
+
+        <div class="bab-title">BAB IV — KODE ETIK, LARANGAN DAN SANKSI</div>
+        <div class="pasal-title">Pasal 6 — Tata Tertib dan Larangan Anggota</div>
+        <p>Demi menjaga marwah dan kerukunan organisasi, setiap anggota JPP baik dalam kegiatan lapangan maupun di grup komunikasi WhatsApp/media sosial <b>wajib mematuhi larangan berikut</b>:</p>
+        <ol>
+          <li><b>Dilarang keras menyalahgunakan narkotika, minuman keras (miras), serta segala bentuk perjudian termasuk judi <i>online</i> (judol).</b></li>
+          <li><b>Dilarang terlibat dalam perilaku menyimpang (LGBT) dan tindakan asusila</b> yang bertentangan dengan norma agama, hukum, dan adat budaya Jawa.</li>
+          <li><b>Dilarang membuat atau menyebarkan konten pornografi</b>, baik berupa foto, video, stiker, maupun ucapan tidak senonoh di lingkungan maupun grup JPP.</li>
+          <li><b>Dilarang menyebarkan berita bohong (HOAX), ujaran kebencian bernuansa SARA</b>, serta informasi provokatif yang belum teruji kebenarannya.</li>
+          <li><b>Dilarang membawa atau mengatasnamakan JPP untuk kepentingan pribadi</b>, termasuk mencari keuntungan bisnis pribadi tanpa izin resmi pengurus.</li>
+          <li><b>Dilarang menyalahgunakan atribut, logo, spanduk, dan stiker JPP</b> di luar kepentingan resmi organisasi.</li>
+          <li><b>Dilarang keluar-masuk grup resmi JPP seenaknya</b> tanpa alasan yang jelas dan konfirmasi kepada pengurus/admin.</li>
+        </ol>
+
+        <div class="pasal-title">Pasal 7 — Penegakan Disiplin dan Sanksi</div>
+        <ol>
+          <li>Bidang Disiplin &amp; Etika bersama Pengurus Harian berwenang memberikan teguran lisan maupun tertulis kepada anggota yang melanggar tata tertib.</li>
+          <li><b>Pengurus berhak mengeluarkan anggota dari grup maupun memberhentikan status keanggotaannya secara tegas</b> apabila terbukti melanggar peraturan dan larangan pada Pasal 6.</li>
+        </ol>
+
+        <div class="bab-title">BAB V — PENUTUP</div>
+        <div class="pasal-title">Pasal 8 — Ketentuan Penutup dan Pengesahan</div>
+        <ol>
+          <li>Demikian Anggaran Dasar (AD) dan Anggaran Rumah Tangga (ART) ini disusun secara sadar, sehat, dan penuh tanggung jawab.</li>
+          <li>Hal-hal yang belum diatur dalam AD/ART ini akan ditetapkan lebih lanjut melalui Keputusan Pengurus atau Musyawarah Anggota sepanjang tidak bertentangan dengan AD/ART.</li>
+          <li>Anggaran Dasar dan Anggaran Rumah Tangga ini mulai berlaku sejak tanggal ditetapkan.</li>
+        </ol>
+
+        <div class="pengesahan-box">
+          <b>Ditetapkan di :</b> Kota Pekanbaru, Provinsi Riau<br>
+          <b>Pada tanggal :</b> 3 Oktober 2026
+        </div>
+
+        <div style="text-align:center; font-weight:bold; margin-top:16px;">PENGURUS PUSAT KOMUNITAS JAWA PRIDE PEKANBARU (JPP)</div>
+
+        <div class="ttd-grid">
+          <div class="ttd-col">
+            Ketua Umum,
+            <div class="ttd-space"></div>
+            <b><u>Jakaria Tri Utomo</u></b>
+          </div>
+          <div class="ttd-col">
+            Sekretaris,
+            <div class="ttd-space"></div>
+            <b><u>Ucik Okta</u></b>
+          </div>
+        </div>
+
+        <div class="ttd-grid" style="margin-top:18px;">
+          <div class="ttd-col">
+            Mengetahui,<br>
+            Penasehat
+            <div class="ttd-space"></div>
+            <b><u>Winarto</u></b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="daftar" class="container">
+    <div class="section-header">
+      <h2>Gabung Grup Resmi Jawa Pride Pekanbaru</h2>
+      <p>Isi data perkenalan di bawah ini, salin biodatanya, lalu masuk ke Grup WhatsApp JPP</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="form-box">
+      <form onsubmit="buatBiodata(event)">
+        <div class="form-group">
+          <label for="nama">Nama Lengkap (Sesuai KTP)</label>
+          <input type="text" id="nama" required placeholder="Contoh: Budi Santoso">
+        </div>
+        <div class="form-group">
+          <label for="asal">Daerah Asal Jawa (Kabupaten / Provinsi)</label>
+          <input type="text" id="asal" required placeholder="Contoh: Wonogiri, Jawa Tengah">
+        </div>
+        <div class="form-group">
+          <label for="kecamatan">Domisili Kecamatan di Pekanbaru / Sekitarnya</label>
+          <select id="kecamatan" required>
+            <option value="">-- Pilih Kecamatan Domisili --</option>
+            <option>Binawidya</option>
+            <option>Bukit Raya</option>
+            <option>Kulim</option>
+            <option>Lima Puluh</option>
+            <option>Marpoyan Damai</option>
+            <option>Payung Sekaki</option>
+            <option>Pekanbaru Kota</option>
+            <option>Rumbai</option>
+            <option>Rumbai Barat</option>
+            <option>Rumbai Timur</option>
+            <option>Sail</option>
+            <option>Senapelan</option>
+            <option>Sukajadi</option>
+            <option>Tuah Madani</option>
+            <option>Tenayan Raya</option>
+            <option>Luar Kota Pekanbaru (Kampar / Siak / Pelalawan)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wa">Nomor WhatsApp Aktif</label>
+          <input type="tel" id="wa" required placeholder="Contoh: 081234567890">
+        </div>
+        <div class="form-group">
+          <label for="bidang">Minat / Bidang Kegiatan (Opsional)</label>
+          <input type="text" id="bidang" placeholder="Contoh: Seni Budaya / Sosial / UMKM">
+        </div>
+        <div class="form-group">
+          <label style="font-weight:normal; display:flex; align-items:flex-start; gap:8px; cursor:pointer;">
+            <input type="checkbox" required style="width:auto; margin-top:4px;">
+            <span>Saya menyatakan bersedia mematuhi AD/ART, Kode Etik, serta ketentuan iuran Rp 10.000/bulan Komunitas Jawa Pride Pekanbaru (JPP).</span>
+          </label>
+        </div>
+        <button type="submit" class="btn-gold" style="width:100%; font-size:15px;">📋 Siapkan Biodata Perkenalan</button>
+      </form>
+
+      <div id="resultCard" class="result-card">
+        <h4>✅ Biodata Siap! Silakan salin teks di bawah ini sebelum masuk grup:</h4>
+        <textarea id="biodataText" class="biodata-preview" readonly></textarea>
+        <div class="copy-row">
+          <button type="button" class="btn-copy" onclick="salinTeks()">📄 Salin Biodata ke Clipboard</button>
+          <span id="copyStatus" class="copy-status"></span>
+        </div>
+        <a href="https://chat.whatsapp.com/FyzOgBpJ8YE9vKKxj2iXf3?s=cl&p=i&iam=2" target="_blank" class="btn-wa">💬 Masuk ke Grup WhatsApp JPP Sekarang &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>KOMUNITAS JAWA PRIDE PEKANBARU (JPP)</strong><br>
+    Seduluran Selawase • Kota Pekanbaru, Provinsi Riau<br>
+    <span style="font-size:12px; color:#999;">Didirikan 3 Oktober 2026 • Hak Cipta © 2026 JPP Pekanbaru</span>
+  </footer>
+
+<script>
+  function filterDoc(mode, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const ad = document.getElementById('sec-ad');
+    const art = document.getElementById('sec-art');
+    if (mode === 'all') {
+      ad.style.display = 'block';
+      art.style.display = 'block';
+    } else if (mode === 'ad') {
+      ad.style.display = 'block';
+      art.style.display = 'none';
+    } else {
+      ad.style.display = 'none';
+      art.style.display = 'block';
+    }
+  }
+
+  function buatBiodata(e) {
+    e.preventDefault();
+    const nama = document.getElementById('nama').value;
+    const asal = document.getElementById('asal').value;
+    const kec = document.getElementById('kecamatan').value;
+    const wa = document.getElementById('wa').value;
+    const bidang = document.getElementById('bidang').value || '-';
+
+    const teks = `Assalamualaikum / Sugeng Rawuh sedulur *Jawa Pride Pekanbaru (JPP)* 🙏
+
+Izin memperkenalkan diri anggota baru:
+• *Nama Lengkap:* ${nama}
+• *Asal Jawa:* ${asal}
+• *Domisili:* ${kec}
+• *No. WA:* ${wa}
+• *Minat Bidang:* ${bidang}
+
+Siap guyub rukun & mematuhi AD/ART JPP. _Seduluran Selawase!_`;
+
+    const textarea = document.getElementById('biodataText');
+    textarea.value = teks;
+    document.getElementById('resultCard').style.display = 'block';
+    salinTeks();
+  }
+
+  function salinTeks() {
+    const textarea = document.getElementById('biodataText');
+    const status = document.getElementById('copyStatus');
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        status.textContent = "✓ Teks berhasil disalin!";
+      }).catch(() => {
+        document.execCommand('copy');
+        status.textContent = "✓ Teks berhasil disalin!";
+      });
+    } else {
+      document.execCommand('copy');
+      status.textContent = "✓ Teks berhasil disalin!";
+    }
+  }
+</script>
+</body>
+</html>
